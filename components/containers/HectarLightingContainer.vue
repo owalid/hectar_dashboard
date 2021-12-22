@@ -1,22 +1,28 @@
 <template>
-  <v-row>
-    <v-card>
-      <v-card-title > News Hectar </v-card-title>
-      <v-card v-for="item in file.slice(0, 3)" :key="item.id">
-        <v-card-title >{{ item.title }}</v-card-title>
-        <v-card-text >{{ item.date }}</v-card-text>
-        <v-card-actions>
-          <v-btn
-            text
-            color="teal accent-4"
-            :href="item.link"
-            >
-            Learn More
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+  <v-container>
+    <v-card elevation="24" rounded class="my-3">
+      <v-card-title>
+        <v-row class="pa-10" align="center" justify="center">
+          <h1>News Hectar</h1>
+        </v-row>
+      </v-card-title>
+      <v-card-text>
+        <v-card v-for="item in file.slice(0, 3)" :key="item.id" class="px-5 pb-5 my-5"  elevation="6">
+          <v-card-title>{{ item.title }}</v-card-title>
+          <v-card-text >{{ $dayjs(item.date, "DD/MM/YY").format("LL") }}</v-card-text>
+          <v-card-actions>
+            <v-btn
+              text
+              color="teal accent-4"
+              :href="item.link"
+              >
+              Voir l'article
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-card-text>
     </v-card>
-  </v-row>
+  </v-container>
 </template>
 <script>
 export default {

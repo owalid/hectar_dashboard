@@ -7,22 +7,22 @@
     </v-card-title>
     <v-card-text>
 
-    <v-card class="px-5 pb-5 my-5" elevation="12">
+    <v-card class="px-5 pb-5 my-5" elevation="6">
       <v-card-title>
-        Prochaine navette vers {{ get_two_next_shuttle_horary[0].to.name  }}
+        Prochaine navette vers {{ get_two_next_shuttle_horary[0].to.name }}
       </v-card-title>
       <v-card-text>
         <v-row>
-          <h3>Depart: {{ get_two_next_shuttle_horary[0].from.hour}}</h3>
+          <h3>Depart: {{ get_two_next_shuttle_horary[0].from.hour }}</h3>
         </v-row>
         <v-row>
           <h3>Dans: {{ next_shuttle_difference }}</h3>
         </v-row>
       </v-card-text>
     </v-card>
-    <v-card class="px-5 pb-5 my-5" elevation="12">
+    <v-card class="px-5 pb-5 my-5" elevation="6">
       <v-card-title>
-        Navette suivante vers {{ get_two_next_shuttle_horary[0].to.name  }}
+        Navette suivante vers {{ get_two_next_shuttle_horary[0].to.name }}
       </v-card-title>
       <v-card-text>
         <v-row>

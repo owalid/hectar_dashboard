@@ -60,11 +60,13 @@ export default {
   },
   dayjs: {
     locales: ['fr'],
+    defaultLocale: 'fr',
     plugins: [
       'utc', // import 'dayjs/plugin/utc'
       'timezone', // import 'dayjs/plugin/timezone'
       'customParseFormat',
-      'relativeTime'
+      'relativeTime',
+      'LocalizedFormat'
     ] // Your Day.js plugin
   },
   webfontloader: {
