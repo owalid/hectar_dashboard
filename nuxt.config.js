@@ -66,7 +66,7 @@ export default {
       'timezone', // import 'dayjs/plugin/timezone'
       'customParseFormat',
       'relativeTime',
-      'LocalizedFormat'
+      'localizedFormat'
     ] // Your Day.js plugin
   },
   webfontloader: {
