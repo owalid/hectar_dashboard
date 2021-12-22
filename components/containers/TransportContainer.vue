@@ -1,10 +1,18 @@
 <template>
-  <v-row>
-    <p>Hello transport container</p>
-  </v-row>
+  <v-container>
+    <shuttle-card />
+    <train-card />
+  </v-container>
 </template>
 <script>
+import ShuttleCard from '~/components/cards/transport/ShuttleCard'
+import TrainCard from '~/components/cards/transport/TrainCard'
+
 export default {
-  name: 'TransportContainer'
+  name: 'TransportContainer',
+  components: {
+    ShuttleCard,
+    TrainCard
+  }
 }
 </script>
