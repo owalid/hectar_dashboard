@@ -12,6 +12,7 @@
         <!-- Linkedin -->
       </v-col>
       <v-col>
+        <hectar-lighting-container />
         <!-- News -->
       </v-col>
     </v-row>
@@ -20,8 +21,9 @@
 
 <script>
 import TransportContainer from '~/components/containers/TransportContainer'
+import HectarLightingContainer from '~/components/containers/HectarLightingContainer.vue'
 export default {
   name: 'IndexPage',
-  components: { TransportContainer }
+  components: { TransportContainer, HectarLightingContainer }
 }
 </script>
