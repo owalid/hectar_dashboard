@@ -30,3 +30,8 @@ export default {
   components: { TransportContainer, HectarLightingContainer, WeatherContainer }
 }
 </script>
+<style scoped>
+.container-main {
+  overflow-y: hidden;
+}
+</style>
