@@ -6,6 +6,7 @@
         <transport-container />
       </v-col>
       <v-col>
+        <weather-container />
         <!-- Weathet -->
       </v-col>
       <v-col>
@@ -21,9 +22,11 @@
 
 <script>
 import TransportContainer from '~/components/containers/TransportContainer'
-import HectarLightingContainer from '~/components/containers/HectarLightingContainer.vue'
+import HectarLightingContainer from '~/components/containers/HectarLightingContainer'
+import WeatherContainer from '~/components/containers/WeatherContainer'
+
 export default {
   name: 'IndexPage',
-  components: { TransportContainer, HectarLightingContainer }
+  components: { TransportContainer, HectarLightingContainer, WeatherContainer }
 }
 </script>

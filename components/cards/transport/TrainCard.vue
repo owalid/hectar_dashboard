@@ -6,7 +6,7 @@
       </v-row>
     </v-card-title>
     <v-card-text>
-      <v-card class="px-5 pb-5 my-5" elevation="12">
+      <v-card class="px-5 pb-5 my-5" elevation="6">
         <v-card-title class="mb-5">
           Prochain train vers Paris
         </v-card-title>
@@ -49,7 +49,7 @@
           </v-row>
         </v-card-text>
       </v-card>
-      <v-card class="px-5 pb-5 my-5" elevation="12">
+      <v-card class="px-5 pb-5 my-5" elevation="6">
         <v-card-title class="mb-5">
           Prochain train vers Rambouillet
         </v-card-title>
