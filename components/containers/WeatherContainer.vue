@@ -2,8 +2,8 @@
   <v-container>
     <v-card elevation="24" rounded class="my-3">
       <v-card-title>
-        <v-row class="pa-10" align="center" justify="center">
-          <h1>METEO</h1>
+        <v-row class="pa-3" align="center" justify="center">
+          <h2>METEO</h2>
         </v-row>
       </v-card-title>
       <v-card-text>

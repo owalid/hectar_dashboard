@@ -2,14 +2,16 @@
   <v-container>
     <v-card elevation="24" rounded class="my-3">
       <v-card-title>
-        <v-row class="pa-10" align="center" justify="center">
-          <h1>News Hectar</h1>
+        <v-row class="pa-3" align="center" justify="center">
+          <h2>News Hectar</h2>
         </v-row>
       </v-card-title>
       <v-card-text>
         <v-card v-for="item in file.slice(0, 3)" :key="item.id" class="px-5 pb-5 my-5"  elevation="6">
-          <v-card-title>{{ item.title }}</v-card-title>
-          <v-card-text >{{ $dayjs(item.date, "DD/MM/YY").format("LL") }}</v-card-text>
+          <v-card-title>
+            <h5>{{ item.title }}</h5>
+          </v-card-title>
+          <v-card-text>{{ $dayjs(item.date, "DD/MM/YY").format("LL") }}</v-card-text>
           <v-card-actions>
             <v-btn
               text
