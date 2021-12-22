@@ -1,4 +1,21 @@
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
 //
 // The variables you want to modify
-// $font-size-root: 20px;
+
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+$heading-font-family: 'Poppins', sans-serif;
+$body-font-family: 'Poppins', sans-serif;
+
+$headings: (
+      'h1': (
+      'size': 4.5rem,
+      'weight': 100,
+      'line-height': 4.444rem,
+      'letter-spacing': 1em,
+      'text-transform': false
+    )
+)
