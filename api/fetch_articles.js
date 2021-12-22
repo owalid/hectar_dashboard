@@ -47,7 +47,7 @@ module.exports = {
     let lst = await Promise.all(name.map(async(e) => ({
       title: (await e.$eval(text, el => el.innerText)),
       // link: 'https://hectar.co' + (await e.$eval('a', el => el.getAttribute('href'))),
-      date: (await e.$eval(date_selector, el => el.innerHTML))
+      date: (await e.$eval(date_selector, el => el.innerText))
     })))
     fs.writeFileSync(LINKEDIN_FILE_NAME, JSON.stringify(lst, null, 4))
     await browser.close()
