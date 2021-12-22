@@ -1,35 +1,35 @@
 <template>
   <v-card elevation="24" rounded class="my-3">
     <v-card-title>
-      <v-row class="pa-10" align="center" justify="center">
-        <h1>NAVETTE</h1>
+      <v-row class="pa-3" align="center" justify="center">
+        <h2>NAVETTE</h2>
       </v-row>
     </v-card-title>
     <v-card-text>
 
     <v-card class="px-5 pb-5 my-5" elevation="6">
       <v-card-title>
-        Prochaine navette vers {{ get_two_next_shuttle_horary[0].to.name }}
+        <h5>Prochaine navette vers {{ get_two_next_shuttle_horary[0].to.name }}</h5>
       </v-card-title>
       <v-card-text>
         <v-row>
-          <h3>Depart: {{ get_two_next_shuttle_horary[0].from.hour }}</h3>
+          <p>Depart: {{ get_two_next_shuttle_horary[0].from.hour }}</p>
         </v-row>
         <v-row>
-          <h3>Dans: {{ next_shuttle_difference }}</h3>
+          <p>Dans: <strong>{{ next_shuttle_difference }}</strong></p>
         </v-row>
       </v-card-text>
     </v-card>
     <v-card class="px-5 pb-5 my-5" elevation="6">
       <v-card-title>
-        Navette suivante vers {{ get_two_next_shuttle_horary[0].to.name }}
+        <h5>Navette suivante vers {{ get_two_next_shuttle_horary[0].to.name }}</h5>
       </v-card-title>
       <v-card-text>
         <v-row>
-          <h3>Depart: {{ get_two_next_shuttle_horary[1].from.name }} à {{ get_two_next_shuttle_horary[1].from.hour }}</h3>
+          <p>Depart: {{ get_two_next_shuttle_horary[1].from.name }} à {{ get_two_next_shuttle_horary[1].from.hour }}</p>
         </v-row>
         <v-row>
-          <h3>Arrivé: {{ get_two_next_shuttle_horary[1].to.name }} à {{ get_two_next_shuttle_horary[1].to.hour }}</h3>
+          <p>Arrivé: {{ get_two_next_shuttle_horary[1].to.name }} à {{ get_two_next_shuttle_horary[1].to.hour }}</p>
         </v-row>
       </v-card-text>
     </v-card>
