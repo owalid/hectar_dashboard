@@ -49,7 +49,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/dayjs',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxtjs/svg'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
