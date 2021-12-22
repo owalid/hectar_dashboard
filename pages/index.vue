@@ -10,16 +10,12 @@
         <!-- Weathet -->
       </v-col>
       <v-col>
-        <!-- Linkedin -->
-      </v-col>
-      <v-col>
         <!-- News -->
         <hectar-lighting-container />
       </v-col>
     </v-row>
     <v-row>
       <v-col>
-        <!-- News -->
         <linkedin-post-container />
       </v-col>
     </v-row>

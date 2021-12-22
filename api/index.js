@@ -4,14 +4,14 @@ const app = express()
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
-  _fetch.linkedin_post()
+  // _fetch.linkedin_post()
 })
 
 module.exports = app
 
 const DAY_MS = 1000 * 60 * 60 * 24;
 setInterval(_fetch.articles, DAY_MS)
-// setInterval(fetch_articles, DAY_MS)
+setInterval(_fetch.linkedin_post, DAY_MS)
 
 if (require.main === module) {
   const port = process.env.PORT || 3001

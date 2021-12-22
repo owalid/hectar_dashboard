@@ -38,11 +38,11 @@ module.exports = {
     await page.goto('https://www.linkedin.com/company/hectar/posts/?feedView=all')
     let princ = ''
 
-    princ = '#main > div.org-grid__content-height-enforcer > div > div.grid__col--lg-17.grid__col.ph0 > div.feed-container-theme > div > div.scaffold-finite-scroll__content > div'
+    princ = '#main > div.org-grid__content-height-enforcer > div > div.grid__col--lg-17.grid__col.ph0 > div.feed-container-theme > div > div.scaffold-finite-scroll__content > div > div:nth-child(1) > div:nth-child(1) > div'
 
 
-    const text = 'div:nth-child(1) > div:nth-child(1) > div > div.feed-shared-update-v2__description-wrapper > div > div > span > span > span'
-    const date_selector = ' div:nth-child(1) > div:nth-child(1) > div > div.feed-shared-actor.display-flex.feed-shared-actor--with-control-menu > a > div.feed-shared-actor__meta.relative > span.feed-shared-actor__sub-description.t-12.t-normal.t-black--light > span > span.visually-hidden'
+    const text = ' div.feed-shared-update-v2__description-wrapper > div > div > span > span > span'
+    const date_selector = 'div.feed-shared-actor.display-flex.feed-shared-actor--with-control-menu > a > div.feed-shared-actor__meta.relative > span.feed-shared-actor__sub-description.t-12.t-normal.t-black--light > span > span.visually-hidden'
     const name = await page.$$(princ)
     let lst = await Promise.all(name.map(async(e) => ({
       title: (await e.$eval(text, el => el.innerText)),
