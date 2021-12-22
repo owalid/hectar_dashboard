@@ -1,18 +1,17 @@
 <template>
   <v-row>
-    <p>{{ info }}</p>
+    <li v-for="item in file.slice(0, 3)" :key="item.id">
+      {{item.date}}: {{ item.title }} <a :href=" item.link">lien</a>
+  </li>
   </v-row>
 </template>
 <script>
 export default {
+  name: 'HectarLightingContainer',
   data () {
     return {
-      info: null
+      file: require(`~/static/hectar_articles.json`)
     }
   },
-  async fetch () {
-    this.info = await this.$axios.$get('/hectar')
-    console.log(this.info)
-  }
 }
 </script>
