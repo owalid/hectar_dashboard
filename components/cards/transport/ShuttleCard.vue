@@ -60,7 +60,7 @@ export default {
         const currentHorary = this.$dayjs(horary.from.hour, "HH:mm")
         const difference = currentHorary.diff(now)
 
-        if (nearestIndex == null || difference < nearestIndex.value) {
+        if ((nearestIndex == null || difference < nearestIndex.value) && difference > -1) {
           nearestIndex = {index: indexHorary, value: difference}
         }
       })

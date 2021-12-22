@@ -23,23 +23,11 @@
           <v-row>
             <p>14:30 - 15:22</p>
           </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
-          </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
-          </v-row>
           <v-row align="base-line">
               <u-line-icon width="15%" height="100%" />
               <p class="ml-10">
                 Terminus La Defense
               </p>
-          </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
-          </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
           </v-row>
           <v-row>
             <p>14:30 - 15:22</p>
@@ -59,12 +47,6 @@
             <p class="ml-10">
               Terminus Rambouillet
             </p>
-          </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
-          </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
           </v-row>
           <v-row>
             <p>14:30 - 15:22</p>
