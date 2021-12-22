@@ -3,14 +3,16 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - hectar_dashboard',
-    title: 'hectar_dashboard',
+    titleTemplate: '%s - Hectar Dashboard',
+    title: 'Hectar Dashboard',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
+      { content: 'yes', name: 'apple-mobile-web-app-capable' },
+      { content: 'yes', name: 'mobile-web-app-capable' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
@@ -52,6 +54,19 @@ export default {
     'nuxt-webfontloader',
     '@nuxtjs/svg'
   ],
+  pwa: {
+    manifest: {
+      lang: 'fr'
+    },
+    options: {
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0',
+      ogSiteName: 'Hectar Dashboard',
+      ogTitle: 'Hectar Dashboard',
+      ogDescription: 'Hectar dashboard',
+      ogUrl: 'https://hectar-dashboard.herokuapp.com/',
+      nativeUI: true
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation="24" rounded class="my-5">
+  <v-card elevation="24" rounded class="mt-5">
     <v-card-title>
       <v-row class="pa-10" align="center" justify="center">
         <h1>TRAIN</h1>
