@@ -9,6 +9,7 @@
       <v-card-text>
 
       <v-carousel
+        v-model="model"
         cycle
         interval="5000"
         height="auto"
@@ -16,12 +17,12 @@
         hide-delimiters
       >
       <template #prev>
-        <v-btn fab x-small color="teal accent-4">
+        <v-btn fab x-small color="teal accent-4"  @click="model--">
           <v-icon color="white">fa-chevron-left</v-icon>
         </v-btn>
       </template>
       <template #next>
-        <v-btn fab x-small color="teal accent-4">
+        <v-btn fab x-small color="teal accent-4"  @click="model++">
           <v-icon color="white">fa-chevron-right</v-icon>
         </v-btn>
       </template>
@@ -65,7 +66,8 @@ export default {
   name: 'HectarLunchContainer',
   data () {
     return {
-      file: require(`~/static/lunch.json`)
+      file: require(`~/static/lunch.json`),
+      model: 0
     }
   },
 }
