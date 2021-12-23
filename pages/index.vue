@@ -7,10 +7,10 @@
       </v-col>
       <v-col>
         <weather-container />
-        <!-- Weathet -->
+        <hectar-lunch-container />
       </v-col>
+
       <v-col>
-        <!-- News -->
         <hectar-lighting-container />
       </v-col>
     </v-row>
@@ -27,9 +27,10 @@ import TransportContainer from '~/components/containers/TransportContainer'
 import HectarLightingContainer from '~/components/containers/HectarLightingContainer'
 import WeatherContainer from '~/components/containers/WeatherContainer'
 import LinkedinPostContainer from '~/components/containers/LinkedinPostContainer'
+import HectarLunchContainer from '~/components/containers/HectarLunchContainer'
 
 export default {
   name: 'IndexPage',
-  components: { TransportContainer, HectarLightingContainer, WeatherContainer, LinkedinPostContainer }
+  components: { TransportContainer, HectarLightingContainer, WeatherContainer, LinkedinPostContainer, HectarLunchContainer }
 }
 </script>
