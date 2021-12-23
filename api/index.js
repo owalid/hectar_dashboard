@@ -11,6 +11,12 @@ app.get('/', (req, res) => {
   // _fetch.articles()
 })
 
+app.get('/weather', (req, res) => {
+  const weather_raw = fs.readFileSync('./static/weather.json');
+  const weather = JSON.parse(weather_raw);
+  res.json(weather)
+})
+
 module.exports = app
 
 const DAY_MS = 1000 * 60 * 60 * 24;
