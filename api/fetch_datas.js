@@ -5,6 +5,8 @@ const ARTICLE_FILE_NAME = './static/hectar_articles.json'
 const LINKEDIN_FILE_NAME = './static/linkedin_post.json'
 const LUNCH_FILE_NAME = './static/lunch.json'
 const GOOGLE_NEW_FILE_NAME = './static/google_news.json'
+const WEATHER_FILE_NAME = './static/weather.json'
+
 let Parser = require('rss-parser');
 let parser = new Parser();
 
