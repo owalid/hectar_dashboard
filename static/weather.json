@@ -21,16 +21,16 @@
         {
             "label": "Température",
             "unit": "°C",
-            "now": "8.7",
-            "up": "8.7",
+            "now": "7.3",
+            "up": "8.8",
             "down": "-2.7"
         },
         {
             "label": "Hygrométrie",
             "unit": "%",
-            "now": "79.8",
+            "now": "87.5",
             "up": "99.4",
-            "down": "79.6"
+            "down": "79.5"
         }
     ]
 }
