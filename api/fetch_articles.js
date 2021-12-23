@@ -26,8 +26,8 @@ module.exports = {
     const page = await browser.newPage()
     await page.goto('https://www.linkedin.com/uas/login');
 
-    await page.type('#username', 'wohibod112@swsguide.com');
-    await page.type('#password', 'wohibod112');
+    await page.type('#username', process.env.NUXT_LINKEDIN_EMAIL);
+    await page.type('#password', process.env.NUXT_LINKEDIN_PASSWORD);
 
     await page.click('#organic-div > form > div.login__form_action_container > button');
 
