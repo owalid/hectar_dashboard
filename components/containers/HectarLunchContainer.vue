@@ -10,7 +10,7 @@
 
       <v-carousel
         cycle
-        interval="3000"
+        interval="5000"
         height="auto"
         width="auto"
         hide-delimiters
@@ -31,11 +31,21 @@
           class="px-5"
         >
           <v-img
-            :src="item.image"
+            :lazy-src="item.image.replace('default', 'thumbnail')"
+            :src="item.image.replace('default', 'mobile')"
             height="250px"
             max-height="250px"
             min-height="250px"
-          />
+          >
+            <template #placeholder>
+              <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-progress-circular
+                  indeterminate
+                  color="dark"
+                ></v-progress-circular>
+              </v-row>
+            </template>
+          </v-img>
         </v-carousel-item>
         <v-btn
           class="mt-5"
