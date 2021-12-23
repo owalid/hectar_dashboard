@@ -72,7 +72,7 @@ export default [
   },
   {
     "from": {
-      "hour": "18:05",
+      "hour": "18:15",
       "name": "Hectar"
     },
     "to": {
