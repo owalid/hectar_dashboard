@@ -1,19 +1,18 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col>
+      <v-col cols="3">
         <!-- Transport shuttle + train -->
         <transport-container />
       </v-col>
-      <v-col>
+      <v-col cols="3">
         <weather-container />
         <hectar-lunch-container />
       </v-col>
-
-      <v-col>
+      <v-col cols="3">
         <hectar-lighting-container />
       </v-col>
-      <v-col>
+      <v-col cols="3">
         <google-news-container />
       </v-col>
     </v-row>
