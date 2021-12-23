@@ -11,7 +11,7 @@
           <v-card-title>
             <h5 style="word-break: normal;">{{ item.title }}</h5>
           </v-card-title>
-          <v-card-text>{{ $dayjs(item.pubDate, "DD/MM/YY").format("LL") }}</v-card-text>
+          <v-card-text>{{ $dayjs(item.isoDate, "YYYY-MM-DDTHH:mm:ss.SSSZ").format("LL") }}</v-card-text>
           <v-card-actions>
             <v-btn
               text
