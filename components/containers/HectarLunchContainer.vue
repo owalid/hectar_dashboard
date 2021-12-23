@@ -27,7 +27,7 @@
           color="teal accent-4"
           href="https://hectar.typeform.com/hectar-lunch"
           >
-          Commander mon repas pour demain
+          Je commande mon repas pour demain
         </v-btn>
       </v-carousel>
     </v-card>
