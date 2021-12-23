@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer')
 const fs = require('fs')
 const ARTICLE_FILE_NAME = './static/hectar_articles.json'
 const LINKEDIN_FILE_NAME = './static/linkedin_post.json'
+const LUNCH_FILE_NAME = './static/lunch.json'
 
 module.exports = {
   articles: async () => puppeteer.launch().then(async(browser) => {
@@ -50,6 +51,27 @@ module.exports = {
       date: (await e.$eval(date_selector, el => el.innerText))
     })))
     fs.writeFileSync(LINKEDIN_FILE_NAME, JSON.stringify(lst, null, 4))
+    await browser.close()
+  }),
+  hectar_lunch: async () => puppeteer.launch().then(async(browser) => {
+    const page = await browser.newPage()
+    await page.goto('https://hectar.typeform.com/hectar-lunch');
+    const button_selector = '#stkv-form-root > div.AnimateStyled-sc-__sc-nw4u3g-0.fanji > div > div:nth-child(2) > div > div > div > nav > button'
+    await page.$eval(button_selector, form => form.click());
+    await page.$eval(button_selector, form => form.click());
+    await page.$eval(button_selector, form => form.click());
+
+    const lst_selector = '#block-01FHFTK37BPH77ACQH6A710EKG > div > div > div > div > div > div > fieldset > div.SpacerWrapper-sc-__sc-4rs8xl-0.eWJrrP > div > div:nth-child(1) > div > div.ChoicesLayoutWrapper-sc-__sc-qpux4o-1.fbRygj > div > div > div > div '
+    const title = 'div.ChoiceContentWrapper-sc-__sc-5l59g2-1.hapVvo > div.ChoiceContent-sc-__sc-5l59g2-2.rIcjV > div'
+    const image_selector = 'div.ImageSupersizeRoot-sc-__sc-miqifx-2.iMgEQE > img'
+    const lunch_lst = await page.$$(lst_selector)
+
+    let lst = await Promise.all(lunch_lst.map(async(e) => ({
+      image: (await e.$eval(image_selector, el => el.src)),
+      title: (await e.$eval(title, el => el.innerText)),
+    })))
+    console.log(lst);
+    fs.writeFileSync(LUNCH_FILE_NAME, JSON.stringify(lst, null, 4))
     await browser.close()
   })
 }
