@@ -9,7 +9,7 @@
       <v-card-text>
         <v-card v-for="item in file.slice(0, 3)" :key="item.id" class="px-5 pb-5 my-5"  elevation="6">
           <v-card-title>
-            <h5>{{ item.title }}</h5>
+            <h5 style="word-break: normal;">{{ item.title }}</h5>
           </v-card-title>
           <v-card-text>{{ $dayjs(item.date, "DD/MM/YY").format("LL") }}</v-card-text>
           <v-card-actions>
