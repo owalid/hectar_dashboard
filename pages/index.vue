@@ -13,11 +13,15 @@
       <v-col>
         <hectar-lighting-container />
       </v-col>
+      <v-col>
+        <google-news-container />
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import GoogleNewsContainer from '../components/containers/GoogleNewsContainer.vue'
 import TransportContainer from '~/components/containers/TransportContainer'
 import HectarLightingContainer from '~/components/containers/HectarLightingContainer'
 import WeatherContainer from '~/components/containers/WeatherContainer'
@@ -29,7 +33,8 @@ export default {
     TransportContainer,
     HectarLightingContainer,
     WeatherContainer,
-    HectarLunchContainer
+    HectarLunchContainer,
+    GoogleNewsContainer
   }
 }
 </script>

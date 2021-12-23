@@ -5,9 +5,11 @@ const app = express()
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
-  _fetch.linkedin_post()
-  _fetch.articles()
+  _fetch.google_news()
+  _fetch.hectar_lunch()
   _fetch.weather()
+  // _fetch.linkedin_post()
+  // _fetch.articles()
 })
 
 app.get('/weather', (req, res) => {

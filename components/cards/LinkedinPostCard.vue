@@ -8,8 +8,8 @@
     <v-card-text>
       <v-card v-for="item in file.slice(0, 3)" :key="item.id" class="px-5 pb-5 my-5"  elevation="6">
         <v-card-text>
-          <div v-for="(text, index) in item.title.split('\n')" :key="index">
-            {{ text }}
+          <div v-for="(text, index) in item.title.split('\n')" :key="index" style="word-break: normal;">
+            {{ text }} <br>
           </div>
         </v-card-text>
         <v-card-text >{{ item.date }}</v-card-text>
