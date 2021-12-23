@@ -1,11 +1,13 @@
+/* eslint-disable camelcase */
 const puppeteer = require('puppeteer')
 const fs = require('fs')
 const ARTICLE_FILE_NAME = './static/hectar_articles.json'
 const LINKEDIN_FILE_NAME = './static/linkedin_post.json'
 const LUNCH_FILE_NAME = './static/lunch.json'
+const WEATHER_FILE_NAME = './static/weather.json'
 
 module.exports = {
-  articles: async () => puppeteer.launch().then(async(browser) => {
+  articles: () => puppeteer.launch().then(async(browser) => {
     const page = await browser.newPage()
     await page.goto('https://www.hectar.co/eclairages')
     const articles_selector = 'body > div.section.less-padding-top.more-padding-top.bg-white.wf-section > div > div.w-dyn-list > div > div'
@@ -23,7 +25,7 @@ module.exports = {
     console.log('articles updated')
   }),
 
-  linkedin_post: async () => puppeteer.launch().then(async(browser) => {
+  linkedin_post: () => puppeteer.launch().then(async(browser) => {
     const page = await browser.newPage()
     await page.goto('https://www.linkedin.com/uas/login');
 
@@ -70,8 +72,53 @@ module.exports = {
       image: (await e.$eval(image_selector, el => el.src)),
       title: (await e.$eval(title, el => el.innerText)),
     })))
-    console.log(lst);
     fs.writeFileSync(LUNCH_FILE_NAME, JSON.stringify(lst, null, 4))
+  }),
+  weather: () => puppeteer.launch().then(async(browser) => {
+    const page = await browser.newPage();
+    await page.goto('https://app.sencrop.com/login');
+    
+    
+    await page.waitForSelector("input[name=email]")
+    await page.type("input[name=email]", process.env.NUXT_SENCROP_EMAIL)
+    await page.waitForSelector("input[name=password]")
+    await page.type("input[name=password]", process.env.NUXT_SENCROP_PASSWORD)
+    // await input_email("ABCDE");
+    // await input_password("ABCDE");
+    await page.keyboard.press('Enter')
+    await page.waitForTimeout(2000)
+    await page.waitForNavigation();
+    await page.waitForNavigation();
+
+    const card_device_selector = "[id*='card-device-'] > div:nth-child(2) > div:nth-child(1)"
+    await page.waitForSelector(card_device_selector)
+
+    const pluviometry_selector = card_device_selector + "> div:nth-child(1) > div > div"
+    await page.waitForSelector(pluviometry_selector)
+
+    const pluv_list = await page.$$eval(pluviometry_selector, elmts => elmts.map((elmt) => {
+      const text = elmt.innerText
+
+      const {0: value, 1: label_time} = text.split("\n\n")
+
+      return {
+        value: value.split('\n').join(" "), label_time
+      }
+    }))
+
+    const temperature_selector = card_device_selector + "> div:nth-child(2) > div > div"
+    
+    await page.waitForSelector(temperature_selector)
+
+    const temp_list = await page.$$eval(temperature_selector, elmts => elmts.map((elmt) => {
+      const text = elmt.innerText
+      
+      const text_splited = text.split("\n\n")
+      const {0: now, 1: unit, 2: up, 3: down} = text_splited[1].split('\n')
+      return { label: text_splited[0], unit, now, up, down}
+    }))
+    
+    fs.writeFileSync(WEATHER_FILE_NAME, JSON.stringify({pluv_list, temp_list}, null, 4))
     await browser.close()
   })
 }

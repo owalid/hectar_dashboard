@@ -17,7 +17,7 @@
               text
               color="teal accent-4"
               :href="item.link"
-              >
+            >
               Voir l'article
             </v-btn>
           </v-card-actions>

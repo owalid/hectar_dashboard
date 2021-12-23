@@ -1,0 +1,36 @@
+{
+    "pluv_list": [
+        {
+            "value": "0 mm",
+            "label_time": "Depuis 1h"
+        },
+        {
+            "value": "0 mm",
+            "label_time": "Aujourd'hui"
+        },
+        {
+            "value": "0 mm",
+            "label_time": "Hier"
+        },
+        {
+            "value": "0 mm",
+            "label_time": "Les 7 derniers jours"
+        }
+    ],
+    "temp_list": [
+        {
+            "label": "Température",
+            "unit": "°C",
+            "now": "8",
+            "up": "8",
+            "down": "-2.7"
+        },
+        {
+            "label": "Hygrométrie",
+            "unit": "%",
+            "now": "80.3",
+            "up": "99.4",
+            "down": "80.3"
+        }
+    ]
+}
