@@ -4,7 +4,8 @@ const app = express()
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
-  // _fetch.hectar_lunch()
+  _fetch.google_news()
+  _fetch.hectar_lunch()
   // _fetch.linkedin_post()
   // _fetch.articles()
 })

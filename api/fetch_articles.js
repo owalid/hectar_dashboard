@@ -3,8 +3,18 @@ const fs = require('fs')
 const ARTICLE_FILE_NAME = './static/hectar_articles.json'
 const LINKEDIN_FILE_NAME = './static/linkedin_post.json'
 const LUNCH_FILE_NAME = './static/lunch.json'
+const GOOGLE_NEW_FILE_NAME = './static/google_news.json'
+let Parser = require('rss-parser');
+let parser = new Parser();
 
 module.exports = {
+  google_news: async () => {
+    let feed = await parser.parseURL('https://news.google.com/rss/search?q="hectar"&hl=fr&gl=FR&ceid=FR:fr');
+    console.log(feed.title);
+
+    lst = feed.items.slice(0, 4)
+    fs.writeFileSync(GOOGLE_NEW_FILE_NAME, JSON.stringify(lst, null, 4))
+  },
   articles: async () => puppeteer.launch().then(async(browser) => {
     const page = await browser.newPage()
     await page.goto('https://www.hectar.co/eclairages')
