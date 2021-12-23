@@ -3,26 +3,42 @@
     <v-card elevation="24" rounded class="my-3">
       <v-card-title>
         <v-row class="pa-3" align="center" justify="center">
-          <h1>Lunch</h1>
+          <h2>Repas</h2>
         </v-row>
       </v-card-title>
+      <v-card-text>
+
       <v-carousel
         cycle
         interval="3000"
         height="auto"
         width="auto"
-        hide-delimiters>
+        hide-delimiters
+      >
+      <template #prev>
+        <v-btn fab x-small color="teal accent-4">
+          <v-icon color="white">fa-chevron-left</v-icon>
+        </v-btn>
+      </template>
+      <template #next>
+        <v-btn fab x-small color="teal accent-4">
+          <v-icon color="white">fa-chevron-right</v-icon>
+        </v-btn>
+      </template>
         <v-carousel-item
-          reverse-transition="fade-transition"
-          transition="fade-transition"
+          v-for="item in file"
+          :key="item.id"
           class="px-5"
-          v-for="item in file" :key="item.id" elevation="6">
-          <v-img :src="item.image"
+        >
+          <v-img
+            :src="item.image"
+            height="250px"
             max-height="250px"
-            max-width="650px"
-            />
+            min-height="250px"
+          />
         </v-carousel-item>
         <v-btn
+          class="mt-5"
           text
           color="teal accent-4"
           href="https://hectar.typeform.com/hectar-lunch"
@@ -30,6 +46,7 @@
           Je commande mon repas pour demain
         </v-btn>
       </v-carousel>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>

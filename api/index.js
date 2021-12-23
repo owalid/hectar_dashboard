@@ -1,5 +1,6 @@
+const fs = require('fs');
 const express = require('express')
-const _fetch = require('./fetch_articles')
+const _fetch = require('./fetch_datas')
 const app = express()
 
 app.get('/', (req, res) => {
@@ -13,9 +14,13 @@ app.get('/', (req, res) => {
 module.exports = app
 
 const DAY_MS = 1000 * 60 * 60 * 24;
+const QUART_HOUR = 1000 * 60 * 15; // EVERY 15 MINUTES
+
 setInterval(_fetch.articles, DAY_MS)
 setInterval(_fetch.linkedin_post, DAY_MS)
 setInterval(_fetch.hectar_lunch, DAY_MS)
+setInterval(_fetch.weather, QUART_HOUR)
+
 
 if (require.main === module) {
   const port = process.env.PORT || 3001

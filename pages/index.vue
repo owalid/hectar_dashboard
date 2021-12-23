@@ -12,12 +12,9 @@
 
       <v-col>
         <hectar-lighting-container />
-          <google-news-container />
       </v-col>
-    </v-row>
-    <v-row>
       <v-col>
-        <linkedin-post-container />
+        <google-news-container />
       </v-col>
     </v-row>
   </v-container>
@@ -28,11 +25,16 @@ import GoogleNewsContainer from '../components/containers/GoogleNewsContainer.vu
 import TransportContainer from '~/components/containers/TransportContainer'
 import HectarLightingContainer from '~/components/containers/HectarLightingContainer'
 import WeatherContainer from '~/components/containers/WeatherContainer'
-import LinkedinPostContainer from '~/components/containers/LinkedinPostContainer'
 import HectarLunchContainer from '~/components/containers/HectarLunchContainer'
 
 export default {
   name: 'IndexPage',
-  components: { TransportContainer, HectarLightingContainer, WeatherContainer, LinkedinPostContainer, HectarLunchContainer, GoogleNewsContainer }
+  components: {
+    TransportContainer,
+    HectarLightingContainer,
+    WeatherContainer,
+    HectarLunchContainer,
+    GoogleNewsContainer
+  }
 }
 </script>

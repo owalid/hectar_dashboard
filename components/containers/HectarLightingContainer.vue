@@ -17,18 +17,21 @@
               text
               color="teal accent-4"
               :href="item.link"
-              >
+            >
               Voir l'article
             </v-btn>
           </v-card-actions>
         </v-card>
       </v-card-text>
     </v-card>
+    <linkedin-post-card />
   </v-container>
 </template>
 <script>
+import LinkedinPostCard from '~/components/cards/LinkedinPostCard'
 export default {
   name: 'HectarLightingContainer',
+  components: {LinkedinPostCard},
   data () {
     return {
       file: require(`~/static/hectar_articles.json`)
