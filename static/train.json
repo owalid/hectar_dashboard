@@ -1,0 +1,110 @@
+{
+  "U": [
+      {
+          "direction": "La Défense (Puteaux)",
+          "links": [],
+          "arrival_date_time": "20220207T111900",
+          "additional_informations": [],
+          "departure_date_time": "20220207T111900",
+          "base_arrival_date_time": "20220207T111900",
+          "base_departure_date_time": "20220207T111900",
+          "data_freshness": "base_schedule"
+      },
+      {
+          "direction": "La Défense (Puteaux)",
+          "links": [],
+          "arrival_date_time": "20220207T121900",
+          "additional_informations": [],
+          "departure_date_time": "20220207T121900",
+          "base_arrival_date_time": "20220207T121900",
+          "base_departure_date_time": "20220207T121900",
+          "data_freshness": "base_schedule"
+      }
+  ],
+  "N": {
+      "paris": [
+          {
+              "direction": "Paris Montparnasse Hall 1 &2 (Paris)",
+              "links": [],
+              "arrival_date_time": "20220207T113750",
+              "additional_informations": [],
+              "departure_date_time": "20220207T113850",
+              "base_arrival_date_time": "20220207T113750",
+              "base_departure_date_time": "20220207T113850",
+              "data_freshness": "base_schedule"
+          },
+          {
+              "direction": "Paris Montparnasse Hall 1 &2 (Paris)",
+              "links": [],
+              "arrival_date_time": "20220207T120750",
+              "additional_informations": [],
+              "departure_date_time": "20220207T120850",
+              "base_arrival_date_time": "20220207T120750",
+              "base_departure_date_time": "20220207T120850",
+              "data_freshness": "base_schedule"
+          },
+          {
+              "direction": "Paris Montparnasse Hall 1 &2 (Paris)",
+              "links": [],
+              "arrival_date_time": "20220207T123750",
+              "additional_informations": [],
+              "departure_date_time": "20220207T123850",
+              "base_arrival_date_time": "20220207T123750",
+              "base_departure_date_time": "20220207T123850",
+              "data_freshness": "base_schedule"
+          },
+          {
+              "direction": "Paris Montparnasse Hall 1 &2 (Paris)",
+              "links": [],
+              "arrival_date_time": "20220207T130750",
+              "additional_informations": [],
+              "departure_date_time": "20220207T130850",
+              "base_arrival_date_time": "20220207T130750",
+              "base_departure_date_time": "20220207T130850",
+              "data_freshness": "base_schedule"
+          }
+      ],
+      "rambouillet": [
+          {
+              "direction": "Rambouillet (Rambouillet)",
+              "links": [],
+              "arrival_date_time": "20220207T112220",
+              "additional_informations": [],
+              "departure_date_time": "20220207T112320",
+              "base_arrival_date_time": "20220207T112220",
+              "base_departure_date_time": "20220207T112320",
+              "data_freshness": "base_schedule"
+          },
+          {
+              "direction": "Rambouillet (Rambouillet)",
+              "links": [],
+              "arrival_date_time": "20220207T115220",
+              "additional_informations": [],
+              "departure_date_time": "20220207T115320",
+              "base_arrival_date_time": "20220207T115220",
+              "base_departure_date_time": "20220207T115320",
+              "data_freshness": "base_schedule"
+          },
+          {
+              "direction": "Rambouillet (Rambouillet)",
+              "links": [],
+              "arrival_date_time": "20220207T122220",
+              "additional_informations": [],
+              "departure_date_time": "20220207T122320",
+              "base_arrival_date_time": "20220207T122220",
+              "base_departure_date_time": "20220207T122320",
+              "data_freshness": "base_schedule"
+          },
+          {
+              "direction": "Rambouillet (Rambouillet)",
+              "links": [],
+              "arrival_date_time": "20220207T125220",
+              "additional_informations": [],
+              "departure_date_time": "20220207T125320",
+              "base_arrival_date_time": "20220207T125220",
+              "base_departure_date_time": "20220207T125320",
+              "data_freshness": "base_schedule"
+          }
+      ]
+  }
+}

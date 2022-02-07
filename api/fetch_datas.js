@@ -1,11 +1,13 @@
 /* eslint-disable camelcase */
 const puppeteer = require('puppeteer')
 const fs = require('fs')
+const axios = require('axios');
 const ARTICLE_FILE_NAME = './static/hectar_articles.json'
 const LINKEDIN_FILE_NAME = './static/linkedin_post.json'
 const LUNCH_FILE_NAME = './static/lunch.json'
 const GOOGLE_NEW_FILE_NAME = './static/google_news.json'
 const WEATHER_FILE_NAME = './static/weather.json'
+const TRAIN_FILE_NAME = './static/train.json'
 
 let Parser = require('rss-parser');
 let parser = new Parser();
@@ -18,6 +20,7 @@ module.exports = {
     lst = feed.items.slice(0, 4)
     fs.writeFileSync(GOOGLE_NEW_FILE_NAME, JSON.stringify(lst, null, 4))
   },
+
   articles: async () => puppeteer.launch().then(async(browser) => {
     const page = await browser.newPage()
     await page.goto('https://www.hectar.co/eclairages')
@@ -66,6 +69,7 @@ module.exports = {
     fs.writeFileSync(LINKEDIN_FILE_NAME, JSON.stringify(lst, null, 4))
     await browser.close()
   }),
+
   hectar_lunch: async () => puppeteer.launch().then(async(browser) => {
     const page = await browser.newPage()
     await page.goto('https://hectar.typeform.com/hectar-lunch');
@@ -85,6 +89,7 @@ module.exports = {
     })))
     fs.writeFileSync(LUNCH_FILE_NAME, JSON.stringify(lst, null, 4))
   }),
+
   weather: () => puppeteer.launch().then(async(browser) => {
     const page = await browser.newPage();
     await page.goto('https://app.sencrop.com/login');
@@ -131,5 +136,38 @@ module.exports = {
     
     fs.writeFileSync(WEATHER_FILE_NAME, JSON.stringify({pluv_list, temp_list}, null, 4))
     await browser.close()
-  })
+  }),
+
+  trains: async () => {
+    const res = await axios.get('https://api.sncf.com/v1/coverage/sncf/stop_areas/stop_area:SNCF:87393256/departures', {
+      headers: {'Authorization': process.env.NUXT_SNCF_KEY}
+    })
+    let result = {
+      'U': [],
+      'N': {
+        'paris': [],
+        'rambouillet': []
+      }
+    }
+
+    res.data.departures.forEach(departure => {
+      const code = departure.display_informations.name;
+      if (code === 'U' || code === 'N') {
+
+        if (code === 'N') {
+          const direction = departure.display_informations.direction.includes("Paris") ? 'paris' : 'rambouillet'
+            result[code][direction].push({
+              direction: departure.display_informations.direction,
+              ...departure.stop_date_time
+            })
+        } else {
+          result[code].push({
+            direction: departure.display_informations.direction,
+            ...departure.stop_date_time
+          })
+        }
+      }
+    })
+    fs.writeFileSync(TRAIN_FILE_NAME, JSON.stringify(result, null, 4))
+  }  
 }

@@ -17,11 +17,8 @@
               Terminus Paris Montparnasse
             </p>
           </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
-          </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
+          <v-row v-for="(n_paris_train, index_train) in train_data['N']['paris']" :key="index_train">
+            <p>{{$dayjs(n_paris_train.departure_date_time).format("HH:mm")}}</p>
           </v-row>
           <v-row align="baseline">
               <p>
@@ -29,11 +26,8 @@
                 Terminus La Defense
               </p>
           </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
-          </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
+          <v-row v-for="(u_paris_train, index_train) in train_data['U']" :key="index_train">
+            <p>{{$dayjs(u_paris_train.departure_date_time).format("HH:mm")}}</p>
           </v-row>
         </v-card-text>
       </v-card>
@@ -48,11 +42,8 @@
               Terminus Rambouillet
             </p>
           </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
-          </v-row>
-          <v-row>
-            <p>14:30 - 15:22</p>
+          <v-row v-for="(n_ramb_train, index_train) in train_data['N']['rambouillet']" :key="index_train">
+            <p>{{$dayjs(n_ramb_train.departure_date_time).format("HH:mm")}}</p>
           </v-row>
         </v-card-text>
       </v-card>
@@ -68,6 +59,21 @@ export default {
   components: {
     NLineIcon,
     ULineIcon
+  },
+  data() {
+    return {
+      train_data: require(`~/static/train.json`)
+    }
+  },
+  mounted() {
+    const EACH_HOUR = 1000 * 60 * 60; // EVERY 60 MINUTES
+    this.interval = setInterval(this.updateTrain, EACH_HOUR)
+  },
+  methods: {
+    async updateTrain() {
+      const res = await this.$axios.get('/train')
+      this.train_data = res.data
+    },
   }
 }
 </script>
