@@ -26,9 +26,9 @@
     "nuxt-webfontloader": "^1.1.0",
     "puppeteer": "^13.0.1",
     "rss-parser": "^3.12.0",
-    "vue": "^2.6.14",
+    "vue": "^2.7.0",
     "vue-server-renderer": "^2.6.14",
-    "vue-template-compiler": "^2.6.14",
+    "vue-template-compiler": "^2.7.0",
     "vuetify": "^2.6.1",
     "webpack": "^4.46.0"
   },
