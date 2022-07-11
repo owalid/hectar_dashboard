@@ -24,7 +24,7 @@
     "express": "^4.17.2",
     "nuxt": "^2.15.8",
     "nuxt-webfontloader": "^1.1.0",
-    "puppeteer": "^13.0.1",
+    "puppeteer": "^15.3.2",
     "rss-parser": "^3.12.0",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
