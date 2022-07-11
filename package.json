@@ -20,7 +20,7 @@
     "@nuxtjs/dayjs": "^1.4.1",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/svg": "^0.3.0",
-    "core-js": "^3.19.3",
+    "core-js": "^3.23.4",
     "express": "^4.17.2",
     "nuxt": "^2.15.8",
     "nuxt-webfontloader": "^1.1.0",
